@@ -12,7 +12,6 @@ void SHA1_Transform(SHA_CTX *ctx);
 void SHA1_Init(SHA_CTX *ctx);
 void SHA1_Update(SHA_CTX *ctx, void* data, int len);
 void SHA1_Final(unsigned char digest[20], SHA_CTX *ctx);
-void Str2SHA1(std::string str, unsigned char digest[20]);
 
 // implementations
 struct SHA_CTX {
@@ -94,7 +93,7 @@ void SHA1_Transform(SHA_CTX *ctx) {
 	for (t = 16; t <= 79; t++)
 		ctx->buffer[t] = SHA_ROTATE(ctx->buffer[t-3] ^ ctx->buffer[t-8] ^ ctx->buffer[t-14] ^ ctx->buffer[t-16], 1);
 
-	for (t = 0; t <= 79; t++) {
+	for (t = 0; t <= 19; t++) {
 		TEMP = SHA_ROTATE(A,5) + (((C^D)&B)^D) + E + ctx->buffer[t] + k1;
 		E = D; 
 		D = C; 

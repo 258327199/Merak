@@ -1,0 +1,12 @@
+{
+	"testClass": [
+		{"name":"vectorTest", "type":"vector<string>"},
+		{"name":"member1", "type":"string"},
+		{"name":"member2", "type":"unsigned int"}
+	],
+	"testClass2": [
+		{"name":"mapTest", "type":"map<string, int>"},
+		{"name":"member1", "type":"string"},
+		{"name":"member2", "type":"unsigned int"}
+	]
+}
